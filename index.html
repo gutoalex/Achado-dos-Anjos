@@ -655,7 +655,8 @@
                 CATÁLOGO DE PRODUTOS DISPONÍVEIS AGORA:
                 ${productsContext}`;
 
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                // Aqui estava o erro! Trocamos de "gemini-2.5-flash-preview..." para o modelo público oficial "gemini-2.0-flash"
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const payload = {
                     contents: [{ parts: [{ text: userText }] }],
@@ -676,6 +677,7 @@
                 resultContainer.classList.remove('hidden');
 
             } catch (error) {
+                console.error("Erro ao chamar a API do Gemini:", error); // Adicionado para facilitar debug caso precise
                 resultText.innerHTML = "<b>Desculpe!</b> Tivemos um problema de conexão com nossos servidores inteligentes. Por favor, tente novamente em alguns segundos.";
                 resultContainer.classList.remove('hidden');
             } finally {
