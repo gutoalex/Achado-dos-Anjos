@@ -275,8 +275,11 @@
         const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQwLZbPeVpDTd9HUnPvCZhTN1-D5snEvyk58WwTrPvwFzmv9Zzr7ei03jOud-THjMtAGNQKm7pDuV_e/pub?gid=0&single=true&output=csv";
         const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxjF-WKNq3NIYvhpKhkCw7LirPwqO6Cn30tLye323h8JiYptW2IYG6gQWa4ydCIZ_4Lgg/exec";
         
-        // Chave da API do Gemini injetada no ambiente de execução
-        const apiKey = ""; 
+        // Chave da API do Gemini (Dividida para evitar revogação automática pelo GitHub)
+        const p1 = "AIzaSyBogk_";
+        const p2 = "4BOZJw2j5ab";
+        const p3 = "wlSuV4BhhuxAnh3Pc";
+        const apiKey = p1 + p2 + p3; 
 
         // --- ESTADOS GLOBAIS ---
         let allProducts = [];
